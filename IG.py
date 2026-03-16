@@ -29,7 +29,7 @@ for i in range(500,1500):
     # Number in the bracket may be changed according to the axis used.
     # tmp1[1] is x-axis, tmp1[2] is y-axis, and tmp1[3] is z-axis.
 bias /= 1000
-bias += 0.026 # Offset bias, may be changed.
+bias += 0.022 # Offset bias, may be changed.
 print('bias = ', bias)
 
 for i in range(1500,n):
