@@ -1,4 +1,6 @@
-import csv
+# Inertial Speedometer by NightFuryAstro/DragonLab #
+
+import matplotlib.pyplot as plt
 
 NAME = 'Example.csv' # Input file name
 
@@ -12,8 +14,6 @@ def deltaV(i):
 
 data_x = []
 data_y = []
-
-import matplotlib.pyplot as plt
 
 f = open(NAME)
 raw = f.readlines()
@@ -29,10 +29,10 @@ for i in range(500,1500):
     # Number in the bracket may be changed according to the axis used.
     # tmp1[1] is x-axis, tmp1[2] is y-axis, and tmp1[3] is z-axis.
 bias /= 1000
-bias += 0.026
+bias += 0.026 # Offset bias, may be changed.
 print('bias = ', bias)
 
-for i in range(6000,n):
+for i in range(1500,n):
     spd += deltaV(i)
     tmp1 = raw[i].split(',')
     data_x.append(float(tmp1[0]))
@@ -40,8 +40,8 @@ for i in range(6000,n):
 
 fig, nx = plt.subplots()
 line, = nx.plot([], [], 'b-',color="blue")  # 空线条
-nx.set_xlim(15, 1360)
-nx.set_ylim(-15, 250)
+nx.set_xlim(5, 125)
+nx.set_ylim(-5, 80) # Set speed range
 line.set_data(data_x,data_y)
 plt.show()
 
