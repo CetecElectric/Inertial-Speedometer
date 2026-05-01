@@ -1,4 +1,4 @@
-# Inertial Speedometer by NightFuryAstro/DragonLab #
+# Inertial Speedometer by DracoLab #
 
 import matplotlib.pyplot as plt
 
